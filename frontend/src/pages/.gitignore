@@ -1,0 +1,25 @@
+
+# React
+frontend/node_modules/
+frontend/dist/
+
+# Spring Boot
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+application-secret.properties
+*.pem
+*.key
+
+# Logs
+*.log
