@@ -1,12 +1,14 @@
+
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
   const navigate = useNavigate();
 
-const goToLogin = (role) => {
-  navigate("/login", { state: { role } });
-};
+  const goToLogin = (role) => {
+    navigate("/login", { state: { role } });
+  };
+
   return (
     <div className="app">
       <header className="navbar">
@@ -18,7 +20,12 @@ const goToLogin = (role) => {
           <a href="#about">About</a>
         </nav>
 
-        <button className="login-btn">Login</button>
+        <button
+          className="login-btn"
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
       </header>
 
       <main id="home" className="hero">
@@ -30,15 +37,16 @@ const goToLogin = (role) => {
         </p>
 
         <div className="hero-buttons">
-          <button>Explore Internships</button>
-        
-<button
-  className="secondary-btn"
-  onClick={() => navigate("/register")}
->
-  Register Now
-</button>
+          <button onClick={() => goToLogin("STUDENT")}>
+            Explore Internships
+          </button>
 
+          <button
+            className="secondary-btn"
+            onClick={() => navigate("/register")}
+          >
+            Register Now
+          </button>
         </div>
       </main>
 
@@ -52,9 +60,10 @@ const goToLogin = (role) => {
               Create your profile, explore internships,
               apply and track applications.
             </p>
+
             <button onClick={() => goToLogin("STUDENT")}>
-  Student Login
-</button>
+              Student Login
+            </button>
           </div>
 
           <div className="card">
@@ -63,9 +72,10 @@ const goToLogin = (role) => {
               Post internships, review student applications,
               and manage recruitment.
             </p>
+
             <button onClick={() => goToLogin("COMPANY")}>
-  Company Login
-</button>
+              Company Login
+            </button>
           </div>
 
           <div className="card">
@@ -74,15 +84,17 @@ const goToLogin = (role) => {
               Manage students, monitor internship applications,
               and generate reports.
             </p>
+
             <button onClick={() => goToLogin("ADMIN")}>
-  Admin Login
-</button>
+              Admin Login
+            </button>
           </div>
         </div>
       </section>
 
       <section id="about" className="about">
         <h2>About the Portal</h2>
+
         <p>
           A centralized platform connecting students,
           companies, and colleges to simplify the
