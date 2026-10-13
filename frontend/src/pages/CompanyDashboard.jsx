@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
-const API = "http://localhost:8080/api";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  "http://localhost:8080/api";
 
 export default function CompanyDashboard() {
   const [internships, setInternships] = useState([]);

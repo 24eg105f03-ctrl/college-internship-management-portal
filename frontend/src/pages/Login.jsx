@@ -18,10 +18,20 @@ function Login() {
   }, [location.state]);
 
   const handleLogin = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    alert("Login form is working! Backend will be connected later.");
-  };
+  const role = document.querySelector('select')?.value?.toLowerCase();
+
+  if (role === "student") {
+    window.location.href = "/student";
+  } else if (role === "company") {
+    window.location.href = "/company";
+  } else if (role === "admin") {
+    window.location.href = "/admin";
+  } else {
+    alert("Please select a role.");
+  }
+};
 
   return (
     <div className="auth-page">
